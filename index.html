@@ -28,10 +28,11 @@
     </style>
 </head>
 <body>
-    <video autoplay loop muted class="background-video">
+    <video autoplay loop muted playsinline class="background-video" id="bg-video">
         <source src="background-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    <button id="play-video" style="display: none;">Play Video</button>
     
     <div class="heart-container">
         <div class="heart"><span>D + P</span></div>
@@ -43,7 +44,7 @@
         <div class="cloud" onclick="toggleAnswer(this)">What is Daksh's favourite food<span class="answer"> Anything Pallu makes❤️</span></div>
     </section>
     
-    <button class="love-button" onclick="startHeartBurst()">Love You</button>
+    <button class="love-button" onclick="startHeartBurst()" ontouchstart="startHeartBurst()">Love You</button>
     
     <div class="message">Forever and always, you are my Pallu ❤️</div>
     
@@ -61,13 +62,27 @@
                 
                 let size = Math.random() * 30 + 10;
                 heart.style.fontSize = `${size}px`;
-                heart.style.left = `${Math.random() * window.innerWidth}px`;
+                heart.style.left = `${Math.random() * window.innerWidth * 0.9}px`;
+                heart.style.top = `${window.innerHeight - 50}px`;
                 
                 setTimeout(() => {
                     heart.remove();
                 }, 3000);
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let video = document.getElementById("bg-video");
+            let playButton = document.getElementById("play-video");
+            
+            video.play().catch(() => {
+                playButton.style.display = "block";
+                playButton.addEventListener("click", () => {
+                    video.play();
+                    playButton.style.display = "none";
+                });
+            });
+        });
     </script>
 </body>
 </html>
