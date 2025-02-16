@@ -9,39 +9,22 @@
         .answer {
             display: none;
         }
-        .cloud:active .answer {
+        .cloud {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .cloud:hover {
+            transform: scale(1.05);
+        }
+        .cloud.active .answer {
             display: inline;
             animation: pop 0.4s ease-in-out;
         }
+        
         @keyframes pop {
             0% { transform: scale(0.8); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
-
-
-        .heart span {
-            position: relative;
-            transform: rotate(45deg);
-            z-index: 4;
-        }
-  
-
-        @keyframes floatHearts {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-500px); opacity: 0; }
-        }
-        
-        .love-button:hover {
-            background: darkred;
-        }
-        .love-button:active {
-            animation: heartBurst 3s linear;
-        }
-        @keyframes heartBurst {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-      
     </style>
 </head>
 <body>
@@ -55,9 +38,9 @@
     </div>
     
     <section class="questions-section">
-        <div class="cloud">Who said "I love you" first<span class="answer"> Palvi!!</span></div>
-        <div class="cloud">When did we first go out? <span class="answer">June 1st 2024...</span></div>
-        <div class="cloud">What is Daksh's favourite food<span class="answer"> Anything Pallu makes❤️</span></div>
+        <div class="cloud" onclick="toggleAnswer(this)">Who said "I love you" first<span class="answer"> Palvi!!</span></div>
+        <div class="cloud" onclick="toggleAnswer(this)">When did we first go out? <span class="answer">June 1st 2024...</span></div>
+        <div class="cloud" onclick="toggleAnswer(this)">What is Daksh's favourite food<span class="answer"> Anything Pallu makes❤️</span></div>
     </section>
     
     <button class="love-button" onclick="startHeartBurst()">Love You</button>
@@ -65,6 +48,10 @@
     <div class="message">Forever and always, you are my Pallu ❤️</div>
     
     <script>
+        function toggleAnswer(element) {
+            element.classList.toggle("active");
+        }
+
         function startHeartBurst() {
             for (let i = 0; i < 30; i++) {
                 let heart = document.createElement("div");
