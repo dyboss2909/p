@@ -1,0 +1,303 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background Video */
+.background-video {
+    position: fixed;
+    top: 0;/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background Video */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Floating Heart with "D + P" */
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.heart {
+    width: 150px;
+    height: 150px;
+    background: url('heart.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: heartbeat 0.5s infinite ease-in-out, floating 1.5s infinite alternate ease-in-out;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.9;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Floating Heart Effect */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Floating Cupid */
+#floating-cupid {
+    position: fixed;
+    width: 80px;
+    height: auto;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    transition: transform 2s ease-in-out;
+}
+
+#floating-cupid img {
+    width: 100%;
+    height: auto;
+}
+
+/* Cloud Speech Bubbles */
+.questions-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cloud {
+    display: inline-block;
+    background: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cloud:hover {
+    transform: scale(1.05);
+}
+
+.answer {
+    display: none;
+    font-size: 16px;
+    color: #d12d2d;
+}
+
+/* Pop effect */
+.cloud.clicked .answer {
+    display: block;
+    animation: pop 0.4s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Love Button */
+.love-button {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.love-button:hover {
+    background: darkred;
+}
+
+/* Floating Hearts */
+.heart-animation {
+    position: absolute;
+    font-size: 20px;
+    color: transparent;
+    opacity: 0.2;
+    -webkit-text-stroke: 1px red;
+    animation: floatHearts 4s linear infinite;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(0); opacity: 0.6; }
+    100% { transform: translateY(-500px); opacity: 0; }
+}
+
+/* Message */
+.message {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+    color: rgb(230, 106, 106) !important;
+    font-weight: bold;
+}
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Heart Animation (Using Image) */
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.heart {
+    width: 150px;
+    height: 150px;
+    background: url('/heart.png') no-repeat center center;
+    background-size: cover; /* Ensure image fits */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: heartbeat 0.1s infinite ease-in-out, floating 1.5s infinite alternate ease-in-out;
+    font-size: 30px;
+    font:oblique;
+    font-weight: bold;
+    color: white;
+    opacity: 0.9; /* Reduce opacity slightly */
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.8); /* Strong beat */
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(0.3); /* Smaller beat */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Floating Heart Effect */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-5px); }
+}
+
+/* Cloud Speech Bubbles */
+.questions-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cloud {
+    display: inline-block;
+    background: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cloud:hover {
+    transform: scale(1.05);
+}
+
+.answer {
+    display: none;
+    font-size: 16px;
+    color: #d12d2d;
+}
+
+/* Pop effect */
+.cloud.clicked .answer {
+    display: block;
+    animation: pop 0.4s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Love Button */
+.love-button {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.love-button:hover {
+    background: darkred;
+}
+
+/* Floating Hearts */
+.heart-animation {
+    position: absolute;
+    font-size: 20px;
+    color: transparent; /* Make the main color transparent */
+    opacity: 0.2; /* Reduce visibility slightly */
+    -webkit-text-stroke: 1px red; /* Create an outline effect */
+    animation: floatHearts 4s linear infinite;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(0); opacity: 0.6; }
+    100% { transform: translateY(-500px); opacity: 0; }
+}
+
+/* Message */
+.message {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+    color: rgb(230, 106, 106) !important; /* Force red color */
+    font-weight: bold;
+}

@@ -1,0 +1,30 @@
+// Function to reveal answers inside speech bubbles
+function revealAnswer(element) {
+    element.classList.toggle("clicked");
+}
+
+// Function to create floating hearts
+function releaseHearts() {
+    const body = document.body;
+    
+    for (let i = 0; i < 20; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart-animation";
+        heart.innerHTML = "❤️";
+        body.appendChild(heart);
+
+        let size = Math.random() * 30 + 10; // Random size between 10px to 40px
+        heart.style.fontSize = `${size}px`;
+        
+        let startX = Math.random() * window.innerWidth; // Random start position
+        heart.style.left = `${startX}px`;
+
+        let animationDuration = Math.random() * 3 + 2; // Random duration between 2s to 5s
+        heart.style.animation = `floatHearts ${animationDuration}s linear`;
+
+        // Remove heart after animation ends
+        setTimeout(() => {
+            heart.remove();
+        }, animationDuration * 1000);
+    }
+}
